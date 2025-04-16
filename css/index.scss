@@ -1,0 +1,199 @@
+/* ----------------------------------------------
+variables
+---------------------------------------------- */
+$color-fondo: #122c1f;        //base clara del sitio  /2c4434
+$color-principal: #444f5c;    
+$color-secundario: #1e2c14;   //encabezados
+$color-acento: #7c8474;       //botones, detalles llamativos
+$color-hover: #e8d8c8;        
+$color-texto: #fff6ec;        //textos principales #2b8514
+$color-suave: #848478;        //textos secundarios o íconos
+$color-claro: #797c74;        //fondo alternativo o detalles sutiles
+
+$fuente-base: "DM Sans", sans-serif;
+;
+
+$sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+/* ----------------------------------------------
+                  reset
+---------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $fuente-base;
+  background-color: $color-fondo;
+  color: $color-texto;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: $color-acento;
+}
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+
+/* ----------------------------------------------
+                   header
+---------------------------------------------- */
+header {
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+  box-shadow: none;
+
+  &.activo {
+    background-color: $color-fondo;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar {
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+
+    .navbar-brand {
+      img {
+        max-height: 45px;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      background: none;
+      i {
+        color: $color-texto;
+        font-size: 1.8rem;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: rotate(90deg);
+          color: $color-hover;
+        }
+      }
+    }
+
+    .nav-link {
+      font-weight: 400;
+      color: $color-texto;
+      font-size: 1rem;
+      margin-left: 1rem;
+      letter-spacing: 0.05em;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        background-color: $color-hover;
+        transition: width 0.3s ease;
+        margin-top: 0.2rem;
+      }
+
+      &:hover {
+        color: $color-hover;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------
+              estilos generales
+---------------------------------------------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.seccion {
+  padding: 4rem 0;
+}
+.titulo-seccion {
+  font-size: 2rem;
+  color: $color-secundario;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------------------------
+                componentes
+---------------------------------------------- */
+
+/* tarjetas informativas */
+.tarjeta {
+  background-color: $color-claro;
+  box-shadow: $sombra-suave;
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+/* aaaacordeón*/
+.acordeon-custom {
+  .accordion-button {
+    background-color: $color-principal;
+    color: #fff;
+  }
+  .accordion-body {
+    background-color: lighten($color-principal, 15%);
+  }
+}
+
+/* modal */
+.modal-content {
+  border-radius: 1rem;
+  box-shadow: $sombra-suave;
+}
+
+/* tooltips */
+.tooltip-inner {
+  background-color: $color-secundario;
+}
+.tooltip.bs-tooltip-top .arrow::before {
+  border-top-color: $color-secundario;
+}
+
+/* hover para tabla de precios */
+.tabla-precios td {
+  transition: background-color 0.3s ease;
+}
+.tabla-precios td:hover {
+  background-color: $color-acento;
+  color: #fff;
+}
+
+/* ----------------------------------------------
+                 clip-path
+---------------------------------------------- */
+.divisor-clippath {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
+  background-color: $color-principal;
+  height: 150px;
+}
+.img-clippath {
+  clip-path: circle(40% at 50% 50%);
+  object-fit: cover;
+}
+

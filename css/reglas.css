@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+    .container {
+      width: 95%;
+    }
+    .tarjeta {
+      padding: 1rem;
+    }
+    .titulo-seccion {
+      font-size: 1.5rem;
+    }
+  }
+  
