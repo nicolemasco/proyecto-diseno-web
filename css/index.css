@@ -15,7 +15,7 @@ variables
 body {
   font-family: "DM Sans", sans-serif;
   background-color: #122c1f;
-  color: #fff6ec;
+  color: #e8d8c8;
   line-height: 1.6;
 }
 
@@ -39,15 +39,21 @@ img {
                    header
 ---------------------------------------------- */
 header {
+  position: relative;
+  z-index: 1;
   background-color: transparent;
+  padding-top: 20px;
   transition: background-color 0.4s ease;
   box-shadow: none;
 }
 header.activo {
-  background-color: #122c1f;
+  background-color: #2271c1; /*?*/
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 header .navbar {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
   padding: 1.5rem 0;
   transition: all 0.3s ease;
 }
@@ -63,37 +69,96 @@ header .navbar .navbar-toggler {
   background: none;
 }
 header .navbar .navbar-toggler i {
-  color: #fff6ec;
+  color: #e8d8c8;
   font-size: 1.8rem;
   transition: transform 0.3s ease;
 }
 header .navbar .navbar-toggler i:hover {
   transform: rotate(90deg);
-  color: #e8d8c8;
+  color: #e8d8c8; /*hamburgesa*/
 }
-header .navbar .nav-link {
+header .navbar .navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+header .navbar .navbar-nav .nav-item .nav-link {
   font-weight: 400;
-  color: #fff6ec;
+  color: #00644b;
   font-size: 1rem;
   margin-left: 1rem;
   letter-spacing: 0.05em;
   position: relative;
   transition: all 0.3s ease;
 }
-header .navbar .nav-link::after {
+header .navbar .navbar-nav .nav-item .nav-link::after {
   content: "";
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #e8d8c8;
+  background-color: #001e06; /*color raya abajo*/
   transition: width 0.3s ease;
   margin-top: 0.2rem;
 }
-header .navbar .nav-link:hover {
-  color: #e8d8c8;
+header .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #001e06;
 }
-header .navbar .nav-link:hover::after {
+header .navbar .navbar-nav .nav-item .nav-link:hover::after {
   width: 100%;
+}
+
+/*importantisimo*/
+@media (max-width: 768px) {
+  .navbar-nav .nav-item .nav-link {
+    color: #e8d8c8 !important;
+  }
+  .navbar-nav .nav-item .nav-link::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #fff; /*color raya abajo*/
+    transition: width 0.3s ease;
+    margin-top: 0.2rem;
+  }
+  .navbar-nav .nav-item .nav-link::after:hover {
+    color: #fff;
+  }
+  .navbar-nav .nav-item .nav-link::after:hover::after {
+    width: 100%;
+  }
+}
+.clip-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.nav-item {
+  margin: 0.5rem 0;
+}
+
+/* ----------------------------------------------
+                hamburguesa
+---------------------------------------------- */
+.navbar-toggler {
+  border-color: #7c8474;
+}
+
+.navbar-toggler-icon {
+  background-color: #7c8474;
+}
+
+.nav-item {
+  margin: 0.5rem 0;
+}
+.nav-item .nav-link::after {
+  background-color: #fff;
+}
+.nav-item .nav-link:hover {
+  color: #fff;
 }
 
 /* ----------------------------------------------
@@ -112,7 +177,7 @@ header .navbar .nav-link:hover::after {
 
 .titulo-seccion {
   font-size: 2rem;
-  color: #1e2c14;
+  color: #e8d8c8;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -165,6 +230,59 @@ header .navbar .nav-link:hover::after {
 .tabla-precios td:hover {
   background-color: #7c8474;
   color: #fff;
+}
+
+.service-card:hover {
+  background-color: #ffe4ec;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Banner video */
+.banner-video {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.banner-video .video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.banner-video .video-container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-video .video-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+}
+.banner-video .video-container .overlay h1 {
+  color: #e8d8c8;
+  font-weight: 700;
+}
+.banner-video .video-container .overlay p {
+  color: #e8d8c8;
+  font-size: 1.2rem;
+}
+
+/* Carousel seccion */
+.carousel-item img {
+  border-radius: 1rem;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bg-light {
+  background-color: #797c74;
 }
 
 /* ----------------------------------------------

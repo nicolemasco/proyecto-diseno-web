@@ -1,14 +1,16 @@
 /* ----------------------------------------------
 variables
 ---------------------------------------------- */
-$color-fondo: #122c1f;        //base clara del sitio  /2c4434
-$color-principal: #444f5c;    
-$color-secundario: #1e2c14;   //encabezados
-$color-acento: #7c8474;       //botones, detalles llamativos
-$color-hover: #e8d8c8;        
-$color-texto: #fff6ec;        //textos principales #2b8514
-$color-suave: #848478;        //textos secundarios o íconos
-$color-claro: #797c74;        //fondo alternativo o detalles sutiles
+$color-fondo: #122c1f; //base del sitio  /2c4434
+$color-principal: #444f5c;
+$color-secundario: #1e2c14; //encabezados
+$color-acento: #7c8474; //botones, detalles llamativos
+$color-hover: #001e06;
+$color-hover-claro: #fff;
+$color-texto: #00644b; //color encima de beige
+$color-textop: #e8d8c8; //textos principales #2b8514
+$color-suave: #848478; //textos secundarios o íconos
+$color-claro: #797c74; //fondo alternativo o detalles sutiles
 
 $fuente-base: "DM Sans", sans-serif;
 ;
@@ -24,20 +26,24 @@ $sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
   font-family: $fuente-base;
   background-color: $color-fondo;
-  color: $color-texto;
+  color: $color-textop;
   line-height: 1.6;
 }
+
 a {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
 }
+
 a:hover {
   color: $color-acento;
 }
+
 img {
   max-width: 100%;
   display: block;
@@ -48,65 +54,105 @@ img {
 /* ----------------------------------------------
                    header
 ---------------------------------------------- */
+
+
 header {
+  position: relative;
+  z-index: 1;
   background-color: transparent;
+  padding-top: 20px;
   transition: background-color 0.4s ease;
   box-shadow: none;
 
   &.activo {
-    background-color: $color-fondo;
+    background-color: #2271c1; /*?*/
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 
   .navbar {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
     padding: 1.5rem 0;
     transition: all 0.3s ease;
 
-    .navbar-brand {
-      img {
-        max-height: 45px;
-        transition: transform 0.3s ease;
-        &:hover {
-          transform: scale(1.05);
-        }
+    .navbar-brand img {
+      max-height: 45px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
       }
     }
 
     .navbar-toggler {
       border: none;
       background: none;
+
       i {
-        color: $color-texto;
+        color: $color-textop;
         font-size: 1.8rem;
         transition: transform 0.3s ease;
+
         &:hover {
           transform: rotate(90deg);
-          color: $color-hover;
+          color: $color-textop; /*hamburgesa*/
         }
       }
     }
 
-    .nav-link {
-      font-weight: 400;
-      color: $color-texto;
-      font-size: 1rem;
-      margin-left: 1rem;
-      letter-spacing: 0.05em;
-      position: relative;
-      transition: all 0.3s ease;
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
 
-      &::after {
-        content: '';
-        display: block;
-        width: 0%;
-        height: 2px;
-        background-color: $color-hover;
-        transition: width 0.3s ease;
-        margin-top: 0.2rem;
+      .nav-item .nav-link {
+        font-weight: 400;
+        color: $color-texto;
+        font-size: 1rem;
+        margin-left: 1rem;
+        letter-spacing: 0.05em;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0%;
+          height: 2px;
+          background-color: $color-hover; /*color raya abajo*/
+          transition: width 0.3s ease;
+          margin-top: 0.2rem;
+        }
+
+        &:hover {
+          color: $color-hover;
+
+          &::after {
+            width: 100%;
+          }
+        }
       }
+    }
+  }
+}
 
+/*importantisimo*/
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-item .nav-link {
+    color: $color-textop !important;
+    &::after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: 2px;
+      background-color: #fff; /*color raya abajo*/
+      transition: width 0.3s ease;
+      margin-top: 0.2rem;
       &:hover {
-        color: $color-hover;
+        color: #fff;
+
         &::after {
           width: 100%;
         }
@@ -114,6 +160,48 @@ header {
     }
   }
 }
+
+
+.clip-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+
+
+/* ----------------------------------------------
+                hamburguesa
+---------------------------------------------- */
+.navbar-toggler {
+  border-color: $color-acento;
+}
+
+.navbar-toggler-icon {
+  background-color: $color-acento; 
+}
+
+
+  .nav-item {
+    margin: 0.5rem 0;
+
+    .nav-link {
+      &::after {
+        background-color: $color-hover-claro;
+      }
+
+      &:hover {
+        color: $color-hover-claro;
+      }
+    }
+  }
+
 
 /* ----------------------------------------------
               estilos generales
@@ -124,12 +212,14 @@ header {
   margin: 0 auto;
   padding: 2rem 0;
 }
+
 .seccion {
   padding: 4rem 0;
 }
+
 .titulo-seccion {
   font-size: 2rem;
-  color: $color-secundario;
+  color: #e8d8c8;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -146,6 +236,7 @@ header {
   border-radius: 1rem;
   transition: transform 0.3s ease;
 }
+
 .tarjeta:hover {
   transform: translateY(-5px);
 }
@@ -156,6 +247,7 @@ header {
     background-color: $color-principal;
     color: #fff;
   }
+
   .accordion-body {
     background-color: lighten($color-principal, 15%);
   }
@@ -171,6 +263,7 @@ header {
 .tooltip-inner {
   background-color: $color-secundario;
 }
+
 .tooltip.bs-tooltip-top .arrow::before {
   border-top-color: $color-secundario;
 }
@@ -179,9 +272,67 @@ header {
 .tabla-precios td {
   transition: background-color 0.3s ease;
 }
+
 .tabla-precios td:hover {
   background-color: $color-acento;
   color: #fff;
+}
+
+.service-card:hover {
+  background-color: #ffe4ec;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+
+/* Banner video */
+.banner-video {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+
+      h1 {
+        color: $color-textop;
+        font-weight: 700;
+      }
+
+      p {
+        color: $color-textop;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+/* Carousel seccion */
+.carousel-item img {
+  border-radius: 1rem;
+  height: 500px;
+  object-fit: cover;
+}
+
+.bg-light {
+  background-color: $color-claro;
 }
 
 /* ----------------------------------------------
@@ -192,8 +343,8 @@ header {
   background-color: $color-principal;
   height: 150px;
 }
+
 .img-clippath {
   clip-path: circle(40% at 50% 50%);
   object-fit: cover;
 }
-
