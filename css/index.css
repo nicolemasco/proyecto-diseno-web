@@ -207,8 +207,13 @@ inicio 1
 }
 
 .carousel-fotos img {
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+}
+
+.carousel-item img {
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* ----------------------------------------------
@@ -268,6 +273,7 @@ inicio 1
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   margin-left: 0px;
+  border-radius: 1rem;
 }
 
 /*elimina el subrayado*/
@@ -291,18 +297,68 @@ a {
   color: #7c8474;
 }
 
-/* Carousel seccion */
-.carousel-item img {
-  border-radius: 1rem;
-  height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.price-table h3 {
+  color: #00644b;
+}
+.price-table p {
+  color: #444f5c;
 }
 
 .bg-light {
   background-color: #3c5f03;
 }
 
+/*-----------------------------------------------
+            animacion fotografica
+------------------------------------------------*/
+#exclusivos {
+  padding-bottom: 80px;
+}
+
+#exclusivo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease; /*efecto más suave*/
+  border-radius: 10px;
+}
+
+#exclusivo:hover {
+  transform: scale(1.03); /* Efecto de zoom */
+  opacity: 0.8; /* Hace la imagen más clara */
+}
+
+.container-fluid1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* ----------------------------------------------
+                 maquillaje
+---------------------------------------------- */
+.maquillaje {
+  background-color: #122c1f;
+  color: #fff;
+}
+.maquillaje h2 {
+  color: #e8d8c8;
+  margin-bottom: 1rem;
+}
+
+/*----------------------------------------------
+              tarjetas bootstrap
+----------------------------------------------*/
+/*tarjetas*/
+.card {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575px) {
+  .card {
+    width: 60%;
+    margin-bottom: 40px;
+  }
+}
 /* ----------------------------------------------
                  clip-path
 ---------------------------------------------- */
@@ -318,6 +374,21 @@ a {
           clip-path: circle(40% at 50% 50%);
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/*formas*/
+.uno {
+  -webkit-clip-path: polygon(14% 0%, 86% 0%, 100% 15.7%, 100% 84.3%, 86% 100%, 14% 100%, 0% 84.3%, 0% 15.7%);
+          clip-path: polygon(14% 0%, 86% 0%, 100% 15.7%, 100% 84.3%, 86% 100%, 14% 100%, 0% 84.3%, 0% 15.7%);
+  width: 320px;
+  height: 240px;
+}
+
+.dos {
+  -webkit-clip-path: polygon(50% 0%, 83.1% 11.3%, 100% 42.5%, 94% 78.9%, 68% 100%, 32% 100%, 6% 78.9%, 0% 42.5%, 17.1% 11.3%);
+          clip-path: polygon(50% 0%, 83.1% 11.3%, 100% 42.5%, 94% 78.9%, 68% 100%, 32% 100%, 6% 78.9%, 0% 42.5%, 17.1% 11.3%);
+  width: 320px;
+  height: 240px;
 }
 
 /*----------------------------------------------
