@@ -10,7 +10,7 @@ $color-hover-claro: #fff;
 $color-texto: #00644b; //color encima de beige
 $color-textop: #e8d8c8; //textos principales #2b8514
 $color-suave: #e8e8e8; //textos secundarios o íconos
-$color-claro: #797c74; //fondo alternativo o detalles sutiles
+$color-claro: #3c5f03; //fondo alternativo o detalles sutiles
 
 $fuente-base: "DM Sans", sans-serif;
 ;
@@ -303,28 +303,51 @@ inicio 1
 
 /* tooltips */
 .tooltip-inner {
-  background-color: $color-secundario;
+  background-color: $color-acento;
 }
 
 .tooltip.bs-tooltip-top .arrow::before {
   border-top-color: $color-secundario;
 }
 
-/* hover para tabla de precios */
-.tabla-precios td {
-  transition: background-color 0.3s ease;
+/* ----------------------------------------------
+              tablas de precio
+---------------------------------------------- */
+
+/*clase principal de cada columna*/
+.price-table{
+  padding-top: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: $color-hover-claro;
+  border: 2px solid $color-hover;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  margin-left: 0px;
 }
 
-.tabla-precios td:hover {
-  background-color: $color-acento;
-  color: #fff;
+/*elimina el subrayado*/
+a {
+  text-decoration: none;
+  color: #000;
 }
 
-.service-card:hover {
-  background-color: #ffe4ec;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
+/*clases de los textos titulos y numeros*/
+.titulos{
+  vertical-align: top;
+  font-size: 1.063rem !important;
+  display: inline-block;
+  margin-top: 15px;
+  color: #222;
 }
+
+.numeros {
+  font-size: 3rem;
+  font-weight: 300;
+  color: $color-acento;
+}
+
+
 
 
 /* Carousel seccion */
@@ -375,3 +398,7 @@ inicio 1
     font-family: $fuente-base;
   }
 }
+
+
+
+

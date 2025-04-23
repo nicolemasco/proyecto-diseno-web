@@ -139,6 +139,8 @@
 
     <!-- acordeón ( #11.1) -->
     <section id="accordion" class="container my-4">
+        <h1 class="text-center mb-4">Preguntas frecuentes</h1>
+
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
@@ -171,11 +173,11 @@
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
                         ¿Qué pasa si me hago hidratación profunda cada mes?
                     </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         Tu piel se mantiene suave, luminosa y protegida del envejecimiento prematuro. Es ideal para mantener un rostro saludable todo el año.                    </div>
                 </div>
@@ -230,6 +232,101 @@
             
             </section>
 
+             <!-- hover tabla de precios (#12) -->
+             <section class="container-fluid">
+                <div class="container pt-5">
+                    <div class="">
+                        <h1 class="text-center mb-4">Tablas de precio</h1>
+                    </div>
+        
+                    <div class="row pt-5">
+                        <div class="col-md-6">
+                            <div class="row">
+        
+                                <div class="price-table col-md-6 col-lg-6">
+                                    <a href="https://google.com" target="blank">
+                                        <h3>Detox Corporal</h3>
+                                        <div class="text-center">
+                                            <i class="uil uil-server-network">
+                                            </i>
+                                        </div>
+                                        <div class="titulos">Paquete #1</div><br>
+                                        <div class="numeros">$30 USD</div>
+                                        <div class="">
+                                            <p>Limpieza con sales minerales</p>
+                                            <p>Mascarilla reductora</p>
+                                            <p>Drenaje linfático</p>
+                                            <p>Té depurativo incluido</p>
+                                        </div>
+                                    </a>
+                                </div>
+        
+                                <div class="price-table col-md-6 col-lg-6">
+                                    <a href="https://teletica.com" target="blank">
+                                        <h3>Ritual de Pies</h3>
+                                        <div class="text-center">
+                                            <i class="uil uil-server-network">
+                                            </i>
+                                        </div>
+                                        <div class="titulos">Paquete #2</div><br>
+                                        <div class="numeros">$45 USD</div>
+                                        <div class="">
+                                            <p>Exfoliación con menta y coco</p>
+                                            <p>Baño relajante con aceites</p>
+                                            <p>Masaje en puntos reflejos</p>
+                                            <p>Hidratación con manteca de karité</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6">
+                            <div class="row">
+        
+                                <div class="price-table col-md-6 col-lg-6">
+                                    <a href="https://repretel.com" target="blank">
+                                        <h3>Glow Express</h3>
+                                        <div class="text-center">
+                                            <i class="uil uil-server-network">
+                                            </i>
+                                        </div>
+                                        <div class="titulos">Paquete #3</div><br>
+                                        <div class="numeros">$40 USD</div>
+                                        <div class="">
+                                                <p>Iluminador natural para el rostro</p>
+                                            <p>Microexfoliación suave</p>
+                                            <p>Masaje lifting exprés</p>
+                                            <p>Sérum revitalizante incluido</p>
+                                        </div>
+                                    </a>
+                                </div>
+        
+        
+                                <div class="price-table col-md-6 col-lg-6">
+                                    <a href="https://racsa.go.cr" target="blank">
+                                        <h3>Baño de Vapor</h3>
+                                        <div class="text-center">
+                                            <i class="uil uil-server-network">
+                                            </i>
+                                        </div>
+                                        <div class="titulos">Paquete #4</div><br>
+                                        <div class="numeros">$38 USD</div>
+                                        <div class="">
+                                            <p>Infusión de hierbas relajantes</p>
+                                            <p>Apertura de poros profunda</p>
+                                            <p>Mejora la circulación</p>
+                                            <p>Aromaterapia durante la sesión</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </section>
+
             <div class="clip-footer">
                 <footer class="footer-custom text-center">
                     <!-- Texto superpuesto -->
@@ -269,6 +366,14 @@
         header.classList.toggle('activo', window.scrollY > 50);
     });
 </script>
+
+    <!-- activacion del TOOLTIP -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 
 
 

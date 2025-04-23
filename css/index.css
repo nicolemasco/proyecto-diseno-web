@@ -220,7 +220,7 @@ inicio 1
 
 /* tarjetas informativas */
 .tarjeta {
-  background-color: #797c74;
+  background-color: #3c5f03;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   border-radius: 1rem;
@@ -248,27 +248,47 @@ inicio 1
 
 /* tooltips */
 .tooltip-inner {
-  background-color: #1e2c14;
+  background-color: #7c8474;
 }
 
 .tooltip.bs-tooltip-top .arrow::before {
   border-top-color: #1e2c14;
 }
 
-/* hover para tabla de precios */
-.tabla-precios td {
-  transition: background-color 0.3s ease;
+/* ----------------------------------------------
+              tablas de precio
+---------------------------------------------- */
+/*clase principal de cada columna*/
+.price-table {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #001e06;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-left: 0px;
 }
 
-.tabla-precios td:hover {
-  background-color: #7c8474;
-  color: #fff;
+/*elimina el subrayado*/
+a {
+  text-decoration: none;
+  color: #000;
 }
 
-.service-card:hover {
-  background-color: #ffe4ec;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
+/*clases de los textos titulos y numeros*/
+.titulos {
+  vertical-align: top;
+  font-size: 1.063rem !important;
+  display: inline-block;
+  margin-top: 15px;
+  color: #222;
+}
+
+.numeros {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #7c8474;
 }
 
 /* Carousel seccion */
@@ -280,7 +300,7 @@ inicio 1
 }
 
 .bg-light {
-  background-color: #797c74;
+  background-color: #3c5f03;
 }
 
 /* ----------------------------------------------

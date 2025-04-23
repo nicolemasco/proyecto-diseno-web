@@ -1,4 +1,34 @@
-@media (max-width: 768px) {
+/************ TABLA DE PRECIOS ***************/
+
+/*clase principal de cada columna*/
+
+
+/*al pasar el mouse en la info camia a color blanco los textos
+.price-table:hover * {
+  color: #9f216f;
+
+}*/
+
+
+/**************** MEDIA QUERIES ******************/
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (max-width: 576px) {
+  .price-table {
+    padding: 20px !important;
+
+  }
+}
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+
   .navbar-nav {
     font-size: 0.9rem;
     flex-direction: column;
@@ -10,15 +40,26 @@
   }
 
   .nav-item .nav-link {
-    color: #e8d8c8; /* beige para móviles */
+    &:hover {
+      color: #fff;
+    }
 
+    &::after {
+      background-color: #fff;
+    }
   }
+}
 
-  .nav-item .nav-link:hover {
-    color: #f0e9dc; /* hover claro si tenés uno específico */
-  }
-
-  .nav-item .nav-link::after {
-    background-color: #f0e9dc;
-  }
+.price-table:hover {
+  background-color: #fff5ea;
+  margin-top: -40px;
+  z-index: 10;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in;
+  border: none;
+  /*buscar sombras generadas 
+      https://getcssscan.com/css-box-shadow-examples */
+  /*cuatro valores: desplazamiento de x, desplazamiento de y, nivel de desenfoque y color de la sombra.*/
+  /*box-shadow: -2px 3px 7px 1px cyan;*/
+  box-shadow: rgba(127, 197, 207, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
 }
